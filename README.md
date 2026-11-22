@@ -1,8 +1,8 @@
 # Hravé reflexy – web projektu
 
-Projektová stránka aplikace Hravé reflexy: studentský projekt (v rámci mentoringu
-ReactGirls) na cestě ke startupu. Stránka je určená hlavně terapeutickým centrům,
-odborníkům a sponzorům, na konci je výzva pro studenty a odkaz na prototyp pro Android.
+Projektová stránka aplikace Hravé reflexy: projekt vznikající v rámci mentoringu
+ReactGirls, na cestě ke startupu. Stránka je určená hlavně terapeutickým centrům,
+odborníkům a sponzorům, na konci je výzva pro nové členy týmu a odkaz na prototyp pro Android.
 
 Čistý statický web bez sestavování: `index.html`, `styles.css` a obrázky v `assets/`.
 
@@ -22,13 +22,11 @@ npx serve .
 
 ## Co ještě doplnit
 
-- fotky a medailonky týmu (vývojářka a autorka nápadu, backend, dva mentoři)
-- projektový e-mail (místa s textem „e-mail doplníme“)
-- logo ReactGirls (se souhlasem ReactGirls) místo zástupného rámečku
-- titul paní Volemanové a přesný název kurzu
+- fotky týmu (zatím je jen fotka autorky)
+- ověřit přesný název kurzu u paní Volemanové
 - smyčku z aplikace a video z domácího cvičení (dítě zezadu)
 - APK prototypu a QR kód na něj
-- obrázek pro sdílení odkazu (`og:image`)
+- po nasazení doplnit plnou adresu do `og:image` v `index.html` (obrázek je v `assets/og-image.png`)
 - doladit mobilní verzi
 
 Plán a texty stránky vznikly v repozitáři aplikace (`docs/PROMO_PAGE_PLAN.md`,
