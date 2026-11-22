@@ -373,3 +373,288 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--primary); outline
 .team .lead .photo img { object-position: center 45%; transform: scale(1.12); transform-origin: 52% 50%; }
 .hero .ph { display: grid; justify-items: center; gap: 12px; bottom: -52px; }
 .soon.parents { justify-self: center; background: var(--chip-bg); color: var(--primary); }
+
+/* ---------- mobil ---------- */
+.menu-btn { display: none; }
+@media (max-width: 900px) {
+  .menu-btn { display: grid; place-content: center; gap: 5px; margin-left: auto; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 12px; background: transparent; color: var(--ink); cursor: pointer; }
+  .menu-btn span { display: block; width: 22px; height: 2px; border-radius: 2px; background: currentColor; transition: transform .2s, opacity .2s; }
+  .top.open .menu-btn span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .top.open .menu-btn span:nth-child(2) { opacity: 0; }
+  .top.open .menu-btn span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .top.open .nav { display: grid; gap: 0; position: absolute; top: 100%; left: 0; right: 0; margin: 0; padding: 4px 20px 12px; background: var(--bg); box-shadow: 0 14px 20px -10px rgba(48,63,73,.3); }
+  .top.open .nav a { padding: 13px 0; font-size: 17px; color: var(--ink); border-bottom: 1px solid var(--hairline); }
+  .top.open .nav a:last-child { border-bottom: 0; }
+  .collab .col + .col { border-left: 0; border-top: 1px solid rgba(255,255,255,.18); }
+}
+@media (max-width: 600px) {
+  :root { --sec-pad: 64px; }
+  .hero { padding-block: 40px 64px; }
+  .hero h1 { font-size: 38px; }
+  .hero .lead { font-size: 17px; }
+  /* úvod: menší tlačítka vedle sebe, notebook + telefon zmenšené (návrh A) */
+  .hero { overflow: hidden; }
+  .hero .grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .hero .actions { flex-wrap: nowrap; gap: 8px; }
+  .hero .actions .btn { flex: 1; min-height: 46px; padding: 0 12px; font-size: 15px; }
+  .hero .vis { justify-self: start; margin-left: calc(50% - 300px); width: 600px; min-height: 520px; transform: scale(.56); transform-origin: top center; margin-bottom: -228px; }
+  .how .row { grid-template-columns: 1fr; }
+  .how .sh { margin-bottom: 28px; }
+  .how .row { gap: 16px; }
+  .how .st, .how .st:first-child { border-top: 0; padding: 22px 22px 24px; gap: 8px; border-radius: 18px; background: var(--band); border-left: 4px solid var(--primary); grid-template-columns: 1fr auto; align-items: center; }
+  .how .st > h3, .how .st > p { grid-column: 1 / -1; }
+  .how .st > h3 { margin-top: 2px; line-height: 1.3; }
+  .how .st:not(.on) { border-left-color: var(--apricot); background: var(--apricot-soft); }
+  .how .st:not(.on) .soon { grid-row: 1; grid-column: 2; background: var(--bg); }
+  .feats { grid-template-columns: 1fr; grid-template-rows: none; grid-auto-flow: row; gap: 18px; }
+  .shots .rowa { gap: 40px; }
+  .ph-wrap { justify-self: center; }
+  .team .lead { gap: 12px; padding: 0 18px 20px; margin-top: 72px; }
+  .team .lead .photo { width: 96px; justify-self: center; border-radius: 50%; margin-top: -48px; margin-bottom: 8px; box-shadow: 0 0 0 5px var(--bg); }
+  .team .lead .txt { gap: 0; }
+  .team .lead .name { font-size: 17px; }
+  .team .lead .name, .team .lead .role { display: block; text-align: center; }
+  .team .lead .bio { margin-top: 10px; }
+  .team .small { grid-template-columns: 1fr; gap: 12px; padding: 0 18px 20px; margin-top: 44px; }
+  .team .small .photo { width: 96px; justify-self: center; margin-top: -48px; margin-bottom: 8px; box-shadow: 0 0 0 5px var(--bg); }
+  .team .small .name, .team .small .role { display: block; text-align: center; }
+  .team .small .bio { margin-top: 10px; }
+  .support { flex-direction: column; text-align: center; }
+  .benefits .card, .endg .card { padding: 24px; }
+  .collab .dark { padding: 48px 20px; }
+  .collab .col { padding: 22px 8px; }
+  .collab .mailw { font-size: 17px; padding: 0 22px; white-space: nowrap; }
+  .try .qr { display: none; }
+  .btn2 { white-space: nowrap; }
+  footer .wrap { flex-direction: column; gap: 8px; text-align: center; }
+}
+/* road: svislá časová osa na mobilu */
+@media (max-width: 900px) {
+  .road .bar { display: none; }
+  .road .cols { gap: 0; position: relative; padding-left: 28px; }
+  .road .cols::before { content: ""; position: absolute; left: 9px; top: 22px; bottom: 22px; width: 4px; border-radius: 4px; background: var(--sage); opacity: .35; }
+  .road .c { position: relative; padding: 14px 16px; margin-bottom: 8px; }
+  .road .c::before { content: ""; position: absolute; left: -23px; top: 16px; width: 12px; height: 12px; box-sizing: border-box; border-radius: 50%; background: var(--sec-bg); border: 3px solid var(--sage); z-index: 1; }
+  .road .past::before { background: var(--primary); border-color: var(--primary); }
+  .road .past::after { content: ""; position: absolute; left: -19px; top: 22px; bottom: -30px; width: 4px; background: var(--primary); }
+  .road .now::before { left: -27px; top: 12px; width: 20px; height: 20px; box-sizing: border-box; background: var(--primary); border: 4px solid var(--sec-bg); box-shadow: 0 0 0 2px var(--primary); }
+}
+@media (max-width: 900px) { .sh { margin-bottom: 28px; } }
+
+/* „Jak to funguje": obecná třída .row z makety telefonu sem přidávala odsazení 8 px */
+.how .row { padding: 0; border-radius: 0; font-size: inherit; }
+
+/* ---------- mobil: jednotná stupnice ----------
+   nadpis stránky 36 · nadpis sekce 28 · nadpis bloku 20 · nadpis položky 17
+   text 16 · drobný text 15 · štítky 13 · odsazení od kraje 20 */
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  .hero h1 { font-size: 36px; }
+  .hero .lead { font-size: 17px; }
+
+  .sh { margin-bottom: 24px; gap: 10px; }
+  .sh h2, .collab h2 { font-size: 28px; line-height: 1.2; letter-spacing: -0.02em; }
+  .sh p, .collab p { font-size: 17px; }
+  .story .cols p:first-child { font-size: 18px; }
+
+  .shots .txt h3, .benefits h3, .endg h3 { font-size: 20px; }
+  .stop h3, .how h3, .road h3, .faq3 h3, .collab .col h3, .feat b { font-size: 17px; }
+  .stop p, .how p, .road p, .faq3 p, .collab .col p, .feat span, .bio, .endg p { font-size: 15px; line-height: 1.55; }
+  .how .num { font-size: 14px; }
+
+  .gap-note { margin-top: 40px; font-size: 17px; }
+  .shots .rowa { gap: 32px; padding-bottom: 40px; }
+  .shots .rowb { gap: 24px; padding-top: 40px; }
+  .shots .txt { gap: 14px; }
+  .faq3 { gap: 28px; }
+
+  .benefits .card, .endg .card { padding: 24px 20px; }
+  .team .lead, .team .small { padding-left: 20px; padding-right: 20px; }
+  .collab .dark { padding: 44px 20px; gap: 24px; }
+
+  .mail, .collab .mailw { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; font-size: 16px; white-space: nowrap; }
+  .btn2 { min-height: 46px; font-size: 16px; }
+  .li-link { justify-self: start; }
+}
+/* úvod na mobilu: menší notebook + telefon přes něj, popisky v čitelné velikosti */
+@media (max-width: 600px) {
+  .hero .vis { transform: none; margin: 0; width: 100%; max-width: 360px; justify-self: center; min-height: 0; height: 330px; }
+  .hero .concept { left: 0; top: 0; }
+  .hero .laptop { top: 32px; width: 240px; border-width: 6px; border-radius: 14px; font-size: 12px; }
+  .hero .lap-top { padding: 6px 9px; }
+  .hero .lap-top i { width: 6px; height: 6px; }
+  .hero .lap-main { padding: 12px; gap: 7px; min-height: 0; }
+  .hero .lap-main h4 { font-size: 15px; margin: 0; }
+  .hero .client { grid-template-columns: 22px 1fr auto; gap: 8px; padding: 7px 9px; border-radius: 10px; }
+  .hero .client i { width: 22px; height: 22px; }
+  .hero .ph { right: 0; top: 44px; bottom: auto; gap: 8px; }
+  .hero .phone { width: 250px; zoom: .5; }
+}
+@media (max-width: 600px) { .collab { padding-bottom: 0; } }
+@media (max-width: 600px) {
+  .hero .laptop { width: 220px; }
+  .hero .client b { font-size: 12px; }
+  .hero .ph { justify-items: end; }
+  .hero .soon.parents { justify-self: end; }
+  .hero .vis { height: 320px; }
+}
+@media (max-width: 600px) {
+  .hero .client { grid-template-columns: 22px 1fr; }
+  .hero .client .tag { display: none; }
+}
+
+/* ---------- sekce Proč na mobilu: klikatá cesta ---------- */
+@media (max-width: 600px) {
+  .ends { display: block; margin-bottom: 26px; }
+  .ends span:last-child { display: none; }
+  .path { grid-template-columns: 1fr; gap: 48px; }
+  .stop { grid-template-columns: 44px 1fr; column-gap: 16px; row-gap: 2px; align-items: start; min-height: 74px; }
+  .stop .ic { grid-row: 1 / span 2; }
+  .stop h3 { margin-top: 10px; font-size: 17px; }
+  .stop p { grid-column: 2; }
+  .stop:nth-of-type(even) { grid-template-columns: 1fr 44px; justify-items: end; text-align: right; }
+  .stop:nth-of-type(even) .ic { grid-column: 2; grid-row: 1 / span 2; }
+  .stop:nth-of-type(even) h3 { grid-column: 1; grid-row: 1; }
+  .stop:nth-of-type(even) p { grid-column: 1; grid-row: 2; }
+  .stop:first-of-type::before { content: ""; position: absolute; left: 20.5px; top: -22px; height: 16px; border-left: 3px dotted var(--apricot); }
+  .stop:nth-of-type(odd):not(:last-child)::after { content: ""; position: absolute; left: 20.5px; right: 50%; top: 52px; bottom: -24px; border-left: 3px dotted var(--apricot); border-bottom: 3px dotted var(--apricot); border-bottom-left-radius: 22px; }
+  .stop:nth-of-type(even)::before { content: ""; position: absolute; left: 50%; right: 20.5px; top: -27px; height: 21px; border-top: 3px dotted var(--apricot); border-right: 3px dotted var(--apricot); border-top-right-radius: 22px; }
+  .stop:nth-of-type(even)::after { content: ""; position: absolute; right: 20.5px; left: 50%; top: 52px; bottom: -24px; border-right: 3px dotted var(--apricot); border-bottom: 3px dotted var(--apricot); border-bottom-right-radius: 22px; }
+  .stop:nth-of-type(odd):not(:first-of-type)::before { content: ""; position: absolute; left: 20.5px; right: 50%; top: -27px; height: 21px; border-top: 3px dotted var(--apricot); border-left: 3px dotted var(--apricot); border-top-left-radius: 22px; }
+}
+
+/* příběh: na mobilu jen začátek, zbytek po rozbalení */
+.story-more { display: none; }
+@media (max-width: 600px) {
+  .story.collapsed .cols p:nth-child(n+3) { display: none; }
+  .story-more { display: flex; width: 100%; margin-top: 4px; }
+}
+
+/* Časté otázky: rozbalovací na mobilu */
+.faq3 .it { display: block; }
+.faq3 .it summary { list-style: none; }
+.faq3 .it summary::-webkit-details-marker { display: none; }
+.faq3 .it p { margin-top: 8px; }
+@media (min-width: 601px) { .faq3 .it summary { cursor: default; } }
+@media (max-width: 600px) {
+  .faq3 { gap: 0; border-top: 1px solid var(--hairline); }
+  .faq3 .it { border-bottom: 1px solid var(--hairline); }
+  .faq3 .it summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 56px; padding: 14px 0; cursor: pointer; }
+  .faq3 .it summary::after { content: ""; flex: none; width: 9px; height: 9px; margin-right: 4px; border-right: 2px solid var(--primary); border-bottom: 2px solid var(--primary); transform: translateY(-3px) rotate(45deg); transition: transform .2s; }
+  .faq3 .it[open] summary::after { transform: translateY(2px) rotate(-135deg); }
+  .faq3 .it p { margin: 0; padding: 0 28px 18px 0; }
+}
+
+/* „Co to přinese": na mobilu přepínač Terapeutům / Rodinám, na počítači dvě karty vedle sebe */
+.ben-tabs { display: none; }
+@media (max-width: 600px) {
+  .benefits { gap: 0; }
+  .ben-tabs { display: grid; grid-template-columns: 1fr 1fr; padding: 4px; margin-bottom: 22px; border-radius: 999px; background: var(--sage-soft); }
+  .ben-tabs button { min-height: 44px; padding: 0 8px; border: 0; border-radius: 999px; background: transparent; color: var(--ink-soft); font: 800 15px/1 var(--font); cursor: pointer; }
+  .ben-tabs button[aria-selected="true"] { background: var(--primary); color: var(--on-primary); }
+  .benefits .card { padding: 0; border: 0; background: transparent; box-shadow: none; gap: 18px; }
+  .benefits .card.off { display: none; }
+  .benefits h3 .gt { display: none; }
+  .benefits .card:not(:has(.soon)) h3 { display: none; }
+  .benefits h3 { margin-bottom: -4px; }
+  .benefits .ic { --ic-size: 40px; }
+}
+
+/* patička navazuje na poslední (šedou) sekci, oddělovací čára jen v šířce obsahu */
+#vyzkousejte { padding-bottom: 48px; }
+footer { background: var(--alt-bg); border-top: 0; padding-block: 0 32px; }
+footer .wrap { border-top: 1px solid var(--hairline); padding-top: 24px; }
+footer .wrap { width: calc(100% - 40px); max-width: calc(var(--wrap) - 40px); margin-inline: auto; padding-inline: 0; }
+
+/* Ukázky na mobilu: telefon nahoře, funkce jako karusel s tečkami */
+.feat-dots { display: none; }
+@media (max-width: 600px) {
+  .shots .rowa { display: flex; flex-direction: column; align-items: stretch; }
+  .shots .rowa .ph-wrap { order: -1; align-self: center; }
+  .shots .rowa .phone { width: 200px; }
+  .shots .rowa .txt h3 { display: none; }
+  .shots .rowa { gap: 52px; }
+  .shots .rowb { gap: 28px; }
+  .shots .rowb .txt h3 { display: none; }
+  .shots .rowb .txt { gap: 10px; order: -1; }
+  .feats { display: flex; grid-template-columns: none; grid-template-rows: none; align-items: stretch; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 20px; margin-inline: -20px; padding: 2px 20px 4px; scrollbar-width: none; }
+  .feats::-webkit-scrollbar { display: none; }
+  .feats .feat { flex: 0 0 64%; scroll-snap-align: start; grid-template-columns: 36px 1fr; align-items: center; column-gap: 12px; row-gap: 6px; align-content: start; padding: 16px; background: var(--card); border: 1px solid var(--hairline); border-radius: 16px; }
+  .feats .feat .ic { width: 36px; height: 36px; }
+  .feats .feat .ic svg { width: 18px; height: 18px; }
+  .feats .feat b { margin: 0; font-size: 16px; }
+  .feats .feat > div { display: contents; }
+  .feats .feat > div > span { grid-column: 1 / -1; font-size: 14px; line-height: 1.45; }
+  .feat-dots { display: flex; justify-content: center; gap: 6px; margin-top: 4px; }
+  .feat-dots i { width: 7px; height: 7px; border-radius: 4px; background: var(--hairline); transition: width .2s, background-color .2s; }
+  .feat-dots i.on { width: 20px; background: var(--primary); }
+}
+/* mobil: pod rozbalovacími otázkami zbytečně velká bílá mezera */
+@media (max-width: 600px) { .faq { padding-bottom: 32px; } }
+/* přepínač: posuvná pilulka a plynulý příjezd obsahu */
+@media (max-width: 600px) {
+  .ben-tabs { position: relative; isolation: isolate; }
+  .ben-tabs::before { content: ""; position: absolute; z-index: -1; top: 4px; bottom: 4px; left: 4px; width: calc(50% - 4px); border-radius: 999px; background: var(--primary); box-shadow: 0 4px 12px -4px rgba(30,127,150,.45); transition: transform .35s cubic-bezier(.3,.8,.3,1); }
+  .ben-tabs[data-active="1"]::before { transform: translateX(100%); }
+  .ben-tabs button, .ben-tabs button[aria-selected="true"] { background: transparent; transition: color .25s ease; }
+  .benefits .card.enter h3 { animation: ben-in .4s cubic-bezier(.3,.8,.3,1) both; }
+  .benefits .card.enter.from-left { --from: -18px; }
+  .benefits .card.enter.from-right { --from: 18px; }
+  .benefits .card.enter .feat { animation: ben-in .4s cubic-bezier(.3,.8,.3,1) both; }
+  .benefits .card.enter .feat:nth-of-type(2) { animation-delay: .04s; }
+  .benefits .card.enter .feat:nth-of-type(3) { animation-delay: .08s; }
+  .benefits .card.enter .feat:nth-of-type(4) { animation-delay: .12s; }
+  .benefits .card.enter .feat:nth-of-type(5) { animation-delay: .16s; }
+  .benefits .card.enter .feat:nth-of-type(6) { animation-delay: .2s; }
+}
+@keyframes ben-in { from { opacity: 0; transform: translateX(var(--from, 0)); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .ben-tabs::before, .ben-tabs button { transition: none; }
+  .benefits .card.enter h3, .benefits .card.enter .feat { animation: none; }
+}
+/* úvod na mobilu: notebook o kus níž, za telefonem; štítek pro rodiče nad telefonem, štítek konceptu pod notebookem */
+@media (max-width: 600px) {
+  .hero .ph { top: 0; }
+  .hero .soon.parents { order: -1; }
+  .hero .laptop { top: 88px; }
+  .hero .concept { top: 311px; }
+  .hero .vis { height: 336px; }
+}
+
+/* úvod na mobilu (návrh 5): telefon vlevo natočený, notebook vpravo, jemný podklad v barvách aplikace, bílé štítky */
+@media (max-width: 600px) {
+  .hero { padding-bottom: 0; }
+  .hero .vis { isolation: isolate; height: 372px; }
+  .hero .vis::before { content: ""; position: absolute; z-index: -1; left: -20px; right: -20px; top: 0; bottom: 0;
+    background: radial-gradient(110% 80% at 15% 25%, rgba(91,195,219,.20), transparent 60%), radial-gradient(90% 80% at 90% 90%, rgba(217,164,136,.22), transparent 60%), var(--sage-soft); }
+  .hero .ph { top: 16px; right: auto; left: 8px; justify-items: start; z-index: 2; }
+  .hero .soon.parents { justify-self: start; }
+  .hero .phone { transform: rotate(-4deg); box-shadow: 0 22px 44px -14px rgba(20,50,60,.45), 0 6px 14px -6px rgba(20,50,60,.25); }
+  .hero .laptop { top: 104px; left: 72px; right: 6px; width: auto; box-shadow: 0 18px 36px -16px rgba(20,50,60,.35); }
+  .hero .concept { top: 330px; left: auto; right: 6px; }
+  .hero .lap-main { padding-left: 66px; }
+  .hero .soon { background: #fff; box-shadow: 0 4px 12px -4px rgba(20,50,60,.18); }
+}
+/* přepínač: bez zvýraznění po klepnutí a bez švu při posunu pilulky */
+.ben-tabs button { -webkit-tap-highlight-color: transparent; }
+.ben-tabs button:focus { outline: none; }
+.ben-tabs button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+@media (max-width: 600px) {
+  .ben-tabs::before { will-change: transform; backface-visibility: hidden; }
+}
+/* úvod na úzkých telefonech: obrázek se zmenší jako celek, rozložení zůstane stejné jako na 375 px */
+@media (max-width: 374px) { .hero .vis { width: 335px; max-width: none; justify-self: center; zoom: .9; } .hero .vis::before { left: -40px; right: -40px; } }
+@media (max-width: 345px) { .hero .vis { zoom: .78; } }
+
+/* „Přidejte se" a „Vyzkoušejte prototyp" vedle sebe: stejné písmo v obou kartách */
+.endg p { font-size: 15px; line-height: 1.55; }
+.endg .card > p.small:last-child { font-size: 14px; }
+.endg .mail { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; font-size: 16px; }
+.endg .btn2 { min-height: 48px; font-size: 16px; }
+
+/* Mobil: sjednocená výška tlačítek, dekorace nekříží text */
+@media (max-width: 600px) {
+  .hero .actions .btn, .story-more { min-height: 48px; }
+  .collab .dark::before { display: none; }
+  .collab .dark::after { right: -190px; top: -200px; }
+}
