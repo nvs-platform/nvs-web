@@ -16,6 +16,9 @@ npx serve .
 
 ## Nasazení
 
+Web běží na GitHub Pages: https://nvs-platform.github.io/nvs-web/ (každý push do `main` se nasadí sám).
+Při změně adresy upravte v `index.html` také `og:url` a `og:image`.
+
 - **GitHub Pages:** Settings → Pages → Deploy from a branch → `main`, složka `/ (root)`.
   U soukromého repozitáře vyžaduje GitHub Pages placený plán.
 - **Netlify:** nový web z repozitáře, build command prázdný, publish directory `.`.
@@ -57,7 +60,6 @@ Nové prvky prosím držte v této stupnici, ať stránka působí jednotně.
 - ověřit přesný název kurzu u paní Volemanové
 - smyčku z aplikace a video z domácího cvičení (dítě zezadu)
 - APK prototypu a QR kód na něj
-- po nasazení doplnit plnou adresu do `og:image` v `index.html` (obrázek je v `assets/og-image.png`)
 
 Plán a texty stránky vznikly v repozitáři aplikace (`docs/PROMO_PAGE_PLAN.md`,
 `docs/PROMO_PAGE_TEXTS.md`).
