@@ -210,6 +210,10 @@ section { padding-block: var(--sec-pad); position: relative; }
 .top .wrap { display: flex; align-items: center; gap: 24px; min-height: 72px; }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); font-weight: 800; font-size: 18px; }
 .brand img { width: 38px; height: 38px; }
+.brand .logo-dark { display: none; border-radius: 50%; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .brand .logo-light { display: none; } :root:not([data-theme="light"]) .brand .logo-dark { display: block; } }
+:root[data-theme="dark"] .brand .logo-light { display: none; }
+:root[data-theme="dark"] .brand .logo-dark { display: block; }
 .nav { display: flex; gap: 22px; margin-left: auto; }
 .nav a { color: var(--ink-soft); text-decoration: none; font-weight: 600; font-size: 15px; }
 .top .btn { min-height: 44px; padding: 0 20px; font-size: 15px; }

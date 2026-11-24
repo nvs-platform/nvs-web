@@ -37,7 +37,9 @@ Pro další vývojáře: co je na stránce interaktivní a jak se mění podle �
 - **Co to přinese:** na mobilu přepínač Terapeutům / Rodinám (`role="tablist"`),
   na počítači jsou obě karty vedle sebe.
 - **Časté otázky:** na mobilu rozbalovací `<details>`, na počítači otevřené.
-- **Tmavý režim:** podle nastavení systému (`prefers-color-scheme`), logo ReactGirls se invertuje.
+- **Tmavý režim:** teď je vypnutý, web je vždy světlý (`data-theme="light"` na `<html>` a `<meta name="color-scheme" content="light">`).
+  Tmavé barvy zůstávají připravené: stačí `data-theme="light"` smazat a web se zase řídí nastavením systému (`prefers-color-scheme`).
+  V tmavém režimu se pak logo vymění za tmavou verzi z aplikace (`assets/logo-dark.webp`, z `nvs-app/assets/img/logo_dark.png`) a logo ReactGirls se invertuje.
 - **Omezené animace:** respektuje `prefers-reduced-motion` (smyčka z aplikace se pak nespustí sama, dostane ovládání).
 - **Smyčka z aplikace** (sekce Ukázky): `assets/app-loop.mp4` (540×960, bez zvuku, ~13 s) a náhled `assets/app-loop-poster.jpg`.
   Nahráno v Android emulátoru (`adb shell screenrecord`), sestříháno ve ffmpeg; tlačítko „dev“ v hlavičce je ve videu zakryté a kolečka klepnutí jsou dokreslená. Hraje, jen když je vidět (IntersectionObserver).
