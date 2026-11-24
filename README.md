@@ -38,7 +38,9 @@ Pro další vývojáře: co je na stránce interaktivní a jak se mění podle �
   na počítači jsou obě karty vedle sebe.
 - **Časté otázky:** na mobilu rozbalovací `<details>`, na počítači otevřené.
 - **Tmavý režim:** podle nastavení systému (`prefers-color-scheme`), logo ReactGirls se invertuje.
-- **Omezené animace:** respektuje `prefers-reduced-motion`.
+- **Omezené animace:** respektuje `prefers-reduced-motion` (smyčka z aplikace se pak nespustí sama, dostane ovládání).
+- **Smyčka z aplikace** (sekce Ukázky): `assets/app-loop.mp4` (540×960, bez zvuku, ~13 s) a náhled `assets/app-loop-poster.jpg`.
+  Nahráno v Android emulátoru (`adb shell screenrecord`), sestříháno ve ffmpeg; tlačítko „dev“ v hlavičce je ve videu zakryté a kolečka klepnutí jsou dokreslená. Hraje, jen když je vidět (IntersectionObserver).
 
 ### Mobilní stupnice (do 600 px)
 
@@ -58,7 +60,7 @@ Nové prvky prosím držte v této stupnici, ať stránka působí jednotně.
 - fotky mentorů (Veronika Čamborová, Jan Marek)
 - text o Dominikovi je zástupný, autor si ho upraví
 - ověřit přesný název kurzu u paní Volemanové
-- smyčku z aplikace a video z domácího cvičení (dítě zezadu)
+- video z domácího cvičení (dítě zezadu)
 - APK prototypu a QR kód na něj
 
 Plán a texty stránky vznikly v repozitáři aplikace (`docs/PROMO_PAGE_PLAN.md`,

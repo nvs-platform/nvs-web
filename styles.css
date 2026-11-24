@@ -294,7 +294,9 @@ a.mail:hover, a.mailw:hover { text-decoration: underline; }
 .shots .phone { width: 230px; }
 .feats { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(4, auto); grid-auto-flow: column; gap: 22px 28px; align-content: start; }
 .ph-wrap { position: relative; }
-.loopbadge { position: absolute; left: 50%; bottom: -14px; transform: translateX(-50%); background: var(--ink); color: var(--bg); font-size: 12px; font-weight: 800; padding: 6px 12px; border-radius: 999px; white-space: nowrap; }
+/* smyčka z aplikace: nahraný telefon má poměr 9:16 */
+.phone.vid { aspect-ratio: 9 / 16; background: #fff; }
+.phone.vid video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 .real { border-radius: var(--r); background: linear-gradient(160deg,#C9B8A6,#8A7563); position: relative; overflow: hidden; display: grid; place-items: center; color: #fff; aspect-ratio: 16/9; }
 .real .in { background: rgba(48,63,73,.35); padding: 18px 24px; border-radius: 20px; display: grid; gap: 10px; justify-items: center; font-weight: 700; text-align: center; }
 .playbig { width: 60px; height: 60px; border-radius: 50%; background: rgba(255,255,255,.92); display: grid; place-items: center; }
